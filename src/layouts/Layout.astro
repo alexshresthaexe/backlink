@@ -3,10 +3,10 @@ import Header from '../components/Header.astro';
 
 interface Props {
 	title: string;
-	description?: string;
+	description: string;
 }
 
-const { title, description = "Discover modern Nepali architecture and house designs. Get inspiration for your dream home in Nepal with our comprehensive guides and expert insights." } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,28 +17,38 @@ const { title, description = "Discover modern Nepali architecture and house desi
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | NepalArchitecture</title>
+		<title>{title}</title>
+		
+		<!-- SEO Meta Tags -->
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="house design in nepal, modern house design in nepal, 4 room house design in nepal, nepali architecture, house construction nepal" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="google-site-verification" content="3g9OLWsbM9qFN8VghSQap9C_UI6n_2Jmpr0N1LvqA_k" />
 	</head>
-	<body class="bg-gray-50">
+	<body>
 		<Header />
 		<slot />
-		<footer class="bg-gray-900 text-white py-8 mt-20">
-			<div class="max-w-6xl mx-auto px-4">
-				<p class="text-center text-gray-400">© {new Date().getFullYear()} NepalArchitecture. All rights reserved.</p>
-			</div>
-		</footer>
 	</body>
 </html>
-
 <style is:global>
 	:root {
-		--accent: 74, 109, 255;
-		--accent-light: 200, 217, 255;
-		--accent-dark: 49, 10, 101;
+		--accent: #3498db;
+		--accent-dark: #2c3e50;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #f6f6f6;
+		background: #f8f9fa;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
