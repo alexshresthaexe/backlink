@@ -1,0 +1,47 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Discover modern Nepali architecture and house designs. Get inspiration for your dream home in Nepal with our comprehensive guides and expert insights." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | NepalArchitecture</title>
+	</head>
+	<body class="bg-gray-50">
+		<Header />
+		<slot />
+		<footer class="bg-gray-900 text-white py-8 mt-20">
+			<div class="max-w-6xl mx-auto px-4">
+				<p class="text-center text-gray-400">© {new Date().getFullYear()} NepalArchitecture. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 74, 109, 255;
+		--accent-light: 200, 217, 255;
+		--accent-dark: 49, 10, 101;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #f6f6f6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

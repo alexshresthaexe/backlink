@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Nepal Architecture - Blog">
+  <Navigation />
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Architecture Blog</h1>
+    <div class="grid gap-8">
+      <article class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Modern House Design Trends in Nepal</h2>
+        <p class="text-gray-600 mb-4">Explore the latest trends in modern house design that are taking Nepal by storm.</p>
+        <a href="#" class="text-blue-600 hover:underline">Read more →</a>
+      </article>
+      <article class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Traditional Nepalese Architecture</h2>
+        <p class="text-gray-600 mb-4">Discover the rich heritage of traditional Nepalese architectural elements.</p>
+        <a href="#" class="text-blue-600 hover:underline">Read more →</a>
+      </article>
+    </div>
+  </main>
+</Layout>
